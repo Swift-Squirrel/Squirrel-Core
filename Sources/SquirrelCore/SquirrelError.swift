@@ -7,11 +7,7 @@
 
 /// Squirrel error
 public protocol SquirrelError: Error, CustomStringConvertible {
-    /// Error kind enum
-    associatedtype errorKind
 
-    /// Error kind
-    var kind: errorKind { get }
 }
 
 /// Error which can be converted to html representation
