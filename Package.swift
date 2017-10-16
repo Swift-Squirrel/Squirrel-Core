@@ -9,9 +9,13 @@ let package = Package(
             name: "SquirrelCore",
             targets: ["SquirrelCore"]),
     ],
+    dependencies: [
+        .package(url: "https://github.com/sharplet/Regex.git",  from: "1.1.0"),
+    ],
     targets: [
         .target(
-            name: "SquirrelCore"),
+            name: "SquirrelCore",
+            dependencies: ["Regex"]),
         .testTarget(
             name: "SquirrelCoreTests",
             dependencies: ["SquirrelCore"]),

@@ -5,6 +5,8 @@
 //  Created by Filip Klembara on 9/18/17.
 //
 
+import Regex
+
 // swiftlint:disable function_body_length
 // swiftlint:disable line_length
 
@@ -62,4 +64,25 @@ public func htmlTemplate(title: String? = nil, body: String) -> String {
     </html>
     """
     return html
+}
+
+public extension String {
+    var escaped: String {
+        return convertToSpecialCharacters(string: self)
+    }
+}
+
+public func convertToSpecialCharacters(string: String) -> String {
+    var newString = string
+    let char_dictionary: [String: StaticString] = [
+        "&amp;" : "&(?!\\S+;)",
+        "&lt;" : "<",
+        "&gt;" : ">",
+        "&quot;" : "\"",
+        "&apos;" : "'"
+    ]
+    for (escaped, unescaped) in char_dictionary {
+        newString = newString.replacingAll(matching: unescaped, with: escaped)
+    }
+    return newString
 }
