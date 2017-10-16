@@ -4,7 +4,6 @@ default_docker: &default_docker
 
 version: 2.0
 jobs:
-
   build_debug:
     <<: *default_docker
     steps:
@@ -39,10 +38,10 @@ jobs:
 
 workflows:
   version: 2
-  resolve_build_test:
+  build_test:
     jobs:
-      - build_debug:
-      - build_release:
+      - build_debug
+      - build_release
       - test_serial:
           requires:
             - build_debug
