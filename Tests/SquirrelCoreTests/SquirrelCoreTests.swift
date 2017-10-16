@@ -12,6 +12,8 @@ class SquirrelCoreTests: XCTestCase {
                 }
                 return data
             }
+
+            var representAs: Representation = .text
         }
 
         let s1 = TestStruct()
