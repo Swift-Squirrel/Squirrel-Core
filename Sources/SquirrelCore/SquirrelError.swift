@@ -15,6 +15,6 @@ public protocol SquirrelError: Error, CustomStringConvertible {
 }
 
 /// Error which can be converted to html representation
-public protocol CustomHTMLConvertibleError: SquirrelError {
-    var html: String { get }
+public protocol SquirrelHTMLConvertibleError: SquirrelError {
+    var htmlErrorRepresentation: String { get }
 }
