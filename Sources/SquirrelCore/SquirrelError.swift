@@ -12,11 +12,4 @@ public protocol SquirrelError: Error, CustomStringConvertible {
 
     /// Error kind
     var kind: errorKind { get }
-
-    /// Constructs Data encoding/decoding error description
-    ///
-    /// - Parameters:
-    ///   - kind: Error kind
-    ///   - description: Error description
-    init(kind: errorKind, description: String?)
 }
