@@ -1,0 +1,2 @@
+# Squirrel-Core
+Squirrel core
