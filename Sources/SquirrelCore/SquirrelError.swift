@@ -13,3 +13,8 @@ public protocol SquirrelError: Error, CustomStringConvertible {
     /// Error kind
     var kind: errorKind { get }
 }
+
+/// Error which can be converted to html representation
+public protocol CustomHTMLConvertibleError: SquirrelError {
+    var html: String { get }
+}
