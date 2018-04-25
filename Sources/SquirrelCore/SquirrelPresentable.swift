@@ -24,8 +24,10 @@ public protocol SquirrelPresentable {
 /// - text: text
 /// - html: html
 /// - json: json
+/// - custom type, value will be used as value in Content-Type
 public enum Representation {
     case text
     case html
     case json
+    case custom(String)
 }
